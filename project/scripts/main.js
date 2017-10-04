@@ -1,22 +1,10 @@
 console.log('main');
 
 
-var option = {
-	speed : 10,
-	duration : 3,
-	stopImageNumber : 0,
-	startCallback : function() {
-		console.log('start');
-	},
-	slowDownCallback : function() {
-		console.log('slowDown');
-	},
-	stopCallback : function($stopElm) {
-		console.log('stop');
-	}
-}
-$('.roulette').roulette(option);
 
+window.onload = function() {
+    Gifffer();
+}
 
 
 
@@ -32,6 +20,8 @@ const getRandomInt = (min, max) => {
 $( "#generate-number" ).click(function() {
 	$('#MAGICAL-NUMBER').text(getRandomInt(0, 36))
 	theWin = winningNumber();
+
+
 });
 
 /////to get the winning number
@@ -49,6 +39,8 @@ $(".odd, .even, .zero").click(function( e ) {
 	console.log(parseInt($(e.currentTarget).text()));
 	dan.balance --;
 	$('#balance').text("Balance: " + dan.balance)
+	$('#report').text(betNumbers)
+
 });
 
 
@@ -84,7 +76,7 @@ const countInArray = (betNumbers, theWin) => {
         }
     }
     return count
-}
+};
 
 
 
@@ -94,7 +86,16 @@ const countInArray = (betNumbers, theWin) => {
 $('#spin-time').click(function (e) {
   checkWinnings();
   countInArray(betNumbers, theWin)
-})
+  clearNumbers();
+  returnBorder();
+});
+
+
+$('#clear-bets').click(function (e) {
+  clearNumbers();
+  $('#report').text(betNumbers);
+  returnBorder();
+});
 
 
 
@@ -131,7 +132,10 @@ $(".odd, .even, .zero").click(function (e) {
 
 
 
-
+const returnBorder = () => {
+	$(".odd, .even").css('border', '2px solid green');
+	$(".zero").css('border', '2px solid grey');		
+}
 
 
 

@@ -1,21 +1,43 @@
-#top {
-	display: inline-flex;
+body {
+	background: green;
 }
 
 #balance {
-	background: grey;
 	width: 100px;
-	height: 100px;
+	height: 30px;
 	text-align: center;
 	color: white;
 }
 
+.title-game {
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	background-image: url('http://www.intepo.com/images/intepo.com-logo.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.roulette-buttons {
+	display: inline-flex;
+	width: 100%;
+	justify-content:  space-between;
+}
+
+
+.roulette-game {
+	display: inline-flex;
+	width: 100%;
+	justify-content: space-between;
+	float: right;
+}
+
 #report {
-	background: black;
-	width: 100px;
-	height: 100px;
+	width: 200px;
+	height: 200px;
 	text-align: center;
 	color: white;
+	word-wrap: break-word;
 }
 
 #MAGICAL-NUMBER {
@@ -27,6 +49,13 @@
 	text-align: center;
 	font-size: 150px;
 }
+
+#instructions {
+	width: 30%;
+	font-size: 10px;
+	color: white;
+}
+
 #roulette-table {
 	float: right;
 	height: 240px;
@@ -36,16 +65,22 @@
 #first-row {
 	display: flex;
 	justify-content: flex-end;
+	flex-wrap: wrap;
+	width: 100%;
 }
 
 #second-row {
 	display: flex;
 	justify-content: flex-end;
+	flex-wrap: wrap;
+	width: 100%;
 }
 
 #third-row {
 	display: flex;
 	justify-content: flex-end;
+	flex-wrap: wrap;
+	width: 100%;
 }
 
 .zero {

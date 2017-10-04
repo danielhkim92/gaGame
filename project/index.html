@@ -5,46 +5,34 @@
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="gifffer.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
 <body>
-	<div id="top">
-		<div id="balance"></div>
-		<div id="report"></div>
+	<div id="balance"></div>
+			<!-- <img src="https://us.123rf.com/450wm/mihmihmal/mihmihmal1705/mihmihmal170500040/78620930-vector-logo-for-roulette-gamble-wheel-of-european-roulette-heap-of-playing-chip-for-betting-letterin.jpg?ver=6"> -->
+		<div class="title-game"></div>
+	<div class='roulette-buttons'>
+		<button id="clear-bets">CLEAR BETS</button>
+		<button id="spin-time">Check Winnings</button>
+		<button id="generate-number">Generate Number</button>
 	</div>
-	
-	<button id="spin-time">CHECK TO SEE IF YOU WON</button>
-	<button id="generate-number">THIS IS TO GENERATE NUMBER</button>
-
-
-<div class="roulette" style="display:none;"> 
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-1-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-2-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-3-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-4-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-5-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-6-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-7-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-8-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-9-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-0-Black-icon.png">
-</div> 
-<!-- 	<div class="roulette" style="overflow: hidden; height: 256px; width: 256px;"> 
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-1-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-2-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-3-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-4-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-5-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-6-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-7-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-8-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-9-Black-icon.png">
-		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-0-Black-icon.png">
-	</div>  -->
-
-
-<!-- this is where the number pops out for now 10.3.17 -->
-	<div id="MAGICAL-NUMBER"></div>
+	<div class='roulette-game'>	
+		<div id="report"></div>
+		<!-- this is where the number pops out for now 10.3.17 -->
+		<div id="MAGICAL-NUMBER"></div>
+		<div id="instructions">
+			<h3>Instructions</h3>
+				<p>Your initial balance is 25.  Place your bets by clicking on the boxes below.  Each click is a one dollar bet.  If you wish to clear your bets and start over, click on the "CLEAR BETS" button and you can place your bets all over again.</p>
+				<p>When you are ready to start the spin, click on the "Generate Number" button.  You will then see the winning number in the black box.  This will produce the the winning number.</p>
+				<p>To see if you won, you will then press the "Check Winnings" button.  You can now check your balance and see how much you have won.</p>
+		</div>
+		<div id="roulette-person">
+			<div class='gif'>
+				<img data-gifffer="http://img15.laughinggif.com/pic/HTTP3N0cmVhbTEuZ2lmc291cC5jb20vdmlldzE	vMjAxNjAzMjQvNTMwMjczOS9yb3VsZXR0ZS13aGVlbC1vLmdpZgloglog.gif">
+			</div>
+		</div>
+	</div>
 <!-- 	this is where the table is created with divs -->
 	<div id="roulette-table">
 		<div id='first-row'>
@@ -101,8 +89,7 @@
     		<div id="chip-100" class="chip-value">100</div>
     	</div>
     </div>	 -->
-
-<script src='scripts/roulette.js'></script>
+<script type="text/javascript" src="gifffer.min.js"></script>
 <script src='scripts/main.js'></script>
 </body>
 </html>
