@@ -1,8 +1,21 @@
+#top {
+	display: inline-flex;
+}
+
 #balance {
 	background: grey;
 	width: 100px;
 	height: 100px;
 	text-align: center;
+	color: white;
+}
+
+#report {
+	background: black;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	color: white;
 }
 
 #MAGICAL-NUMBER {
@@ -13,6 +26,11 @@
 	height: 200px;
 	text-align: center;
 	font-size: 150px;
+}
+#roulette-table {
+	float: right;
+	height: 240px;
+	background: green;
 }
 
 #first-row {
@@ -30,36 +48,43 @@
 	justify-content: flex-end;
 }
 
-.number {
+.zero {
+	background: green;
+	width: 80px;
+	height: 80px;
+	text-align: center;
+	border: 2px solid grey;
+	color: white;
+}
+
+.even {
+	background: red;
 	width: 80px;
 	height: 80px;
 	text-align: center;
 	border: 2px solid green;
-}
-
-#zero {
-	background: green;
 	color: white;
-	border: 2px solid white;
 }
 
-#odd {
+.odd {
 	background: black;
+	width: 80px;
+	height: 80px;
+	text-align: center;
+	border: 2px solid green;
 	color: white;
 }
 
-#even {
-	background: red;
-	color: white;
-}
-#roulette-table {
-    background: green;
-    background-size: 100%;
-    width: 100%;
-    height: 240px;	
-}
 
-.chips {
+
+
+
+
+
+
+
+
+/*.chips {
 	display: flex;
 	justify-content: center;
 }
@@ -83,3 +108,4 @@
 	text-align: center;
 	margin: auto;
 }
+*/

@@ -1,4 +1,4 @@
-console.log('roulette page');
+console.log('lets make this work');
 
 (function($) {
 	var Roulette = function(options) {

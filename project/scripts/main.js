@@ -1,4 +1,27 @@
+console.log('main');
+
+
+var option = {
+	speed : 10,
+	duration : 3,
+	stopImageNumber : 0,
+	startCallback : function() {
+		console.log('start');
+	},
+	slowDownCallback : function() {
+		console.log('slowDown');
+	},
+	stopCallback : function($stopElm) {
+		console.log('stop');
+	}
+}
+$('.roulette').roulette(option);
+
+
+
+
 let theWin;
+let amountOfTimes
 ////to get the winning number
 const getRandomInt = (min, max) => {
   min = Math.ceil(min);
@@ -21,11 +44,11 @@ const winningNumber = () => {
 /// get an array of the bet numbers
 const betNumbers = [];
 
-$(".number").click(function( e ) {
+$(".odd, .even, .zero").click(function( e ) {
 	betNumbers.push(parseInt($(e.currentTarget).text()));
 	console.log(parseInt($(e.currentTarget).text()));
 	dan.balance --;
-	$('#balance').text(dan.balance)
+	$('#balance').text("Balance: " + dan.balance)
 });
 
 
@@ -38,11 +61,12 @@ const clearNumbers = () => {
 /////to seee if i won or lost and increment balance
 const checkWinnings = () => {
 	for(let i = 0; i < betNumbers.length; i++){
-		console.log(betNumbers[i])
 		if(betNumbers[i] === theWin){
 			console.log(betNumbers[i] + " is a winning number")
 			dan.balance += 36;
-			$('#balance').text(dan.balance)
+			amountOfTimes = countInArray(betNumbers, theWin)
+			$('#balance').text("Balance: " + dan.balance)
+			$('#report').text("You won" + (35 * amountOfTimes))
 		}
 		else{
 			console.log("sorry you didnt pick the winning number")
@@ -50,9 +74,26 @@ const checkWinnings = () => {
 	}
 }
 
+
+////this is how i get hte amount of times the number pops out
+const countInArray = (betNumbers, theWin) => {
+    var count = 0;
+    for (var i = 0; i < betNumbers.length; i++) {
+        if (betNumbers[i] === theWin) {
+            count++;
+        }
+    }
+    return count
+}
+
+
+
+
+
+
 $('#spin-time').click(function (e) {
   checkWinnings();
-  clearNumbers();
+  countInArray(betNumbers, theWin)
 })
 
 
@@ -66,7 +107,7 @@ class Player {
 
 const dan = new Player
 
-$('#balance').text(dan.balance)
+$('#balance').text("Balance: " + dan.balance)
 
 ////math
 // 35:1 when the chip is on the actual number
@@ -84,9 +125,38 @@ $('#balance').text(dan.balance)
 
 
 ///kinda lets people know whats clicked
-$('.number').click(function (e) {
+$(".odd, .even, .zero").click(function (e) {
   $(this).css('border', '2px dashed white');
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

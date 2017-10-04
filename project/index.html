@@ -8,10 +8,16 @@
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
 <body>
-	<div id="balance">hello</div>
+	<div id="top">
+		<div id="balance"></div>
+		<div id="report"></div>
+	</div>
+	
 	<button id="spin-time">CHECK TO SEE IF YOU WON</button>
 	<button id="generate-number">THIS IS TO GENERATE NUMBER</button>
-	<div class="roulette" style="overflow: hidden; height: 256px; width: 256px;"> 
+
+
+<div class="roulette" style="display:none;"> 
 		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-1-Black-icon.png">
 		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-2-Black-icon.png">
 		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-3-Black-icon.png">
@@ -22,57 +28,71 @@
 		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-8-Black-icon.png">
 		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-9-Black-icon.png">
 		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-0-Black-icon.png">
-	</div> 
-	
+</div> 
+<!-- 	<div class="roulette" style="overflow: hidden; height: 256px; width: 256px;"> 
+		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-1-Black-icon.png">
+		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-2-Black-icon.png">
+		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-3-Black-icon.png">
+		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-4-Black-icon.png">
+		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-5-Black-icon.png">
+		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-6-Black-icon.png">
+		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-7-Black-icon.png">
+		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-8-Black-icon.png">
+		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-9-Black-icon.png">
+		<img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Numbers-0-Black-icon.png">
+	</div>  -->
+
+
+<!-- this is where the number pops out for now 10.3.17 -->
 	<div id="MAGICAL-NUMBER"></div>
+<!-- 	this is where the table is created with divs -->
 	<div id="roulette-table">
 		<div id='first-row'>
-				<div id="odd" class="number">3</div>
-				<div id="even" class="number">6</div>
-				<div id="odd" class="number">9</div>
-				<div id="even" class="number">12</div>
-				<div id="odd" class="number">15</div>
-				<div id="even" class="number">18</div>
-				<div id="odd" class="number">21</div>
-				<div id="even" class="number">24</div>
-				<div id="odd" class="number">27</div>
-				<div id="even" class="number">30</div>
-				<div id="odd" class="number">33</div>
-				<div id="even" class="number">36</div>
+				<div id="number" class="odd">3</div>
+				<div id="number" class="even">6</div>
+				<div id="number" class="odd">9</div>
+				<div id="number" class="even">12</div>
+				<div id="number" class="odd">15</div>
+				<div id="number" class="even">18</div>
+				<div id="number" class="odd">21</div>
+				<div id="number" class="even">24</div>
+				<div id="number" class="odd">27</div>
+				<div id="number" class="even">30</div>
+				<div id="number" class="odd">33</div>
+				<div id="number" class="even">36</div>
 		</div>
 		<div id='second-row'>
-			<div id="zero" class="number">0</div>
-			<div id="even" class="number">2</div>
-			<div id="odd" class="number">5</div>
-			<div id="even" class="number">8</div>
-			<div id="odd" class="number">11</div>
-			<div id="even" class="number">14</div>
-			<div id="odd" class="number">17</div>
-			<div id="even" class="number">20</div>
-			<div id="odd" class="number">23</div>
-			<div id="even" class="number">26</div>
-			<div id="odd" class="number">29</div>
-			<div id="even" class="number">32</div>
-			<div id="odd" class="number">35</div>
+			<div id="number" class="zero">0</div>
+			<div id="number" class="even">2</div>
+			<div id="number" class="odd">5</div>
+			<div id="number" class="even">8</div>
+			<div id="number" class="odd">11</div>
+			<div id="number" class="even">14</div>
+			<div id="number" class="odd">17</div>
+			<div id="number" class="even">20</div>
+			<div id="number" class="odd">23</div>
+			<div id="number" class="even">26</div>
+			<div id="number" class="odd">29</div>
+			<div id="number" class="even">32</div>
+			<div id="number" class="odd">35</div>
 		</div>
 		<div id='third-row'>
-			<div id="odd" class="number">
-				<p>1</p></div>
-			<div id="even" class="number">4</div>
-			<div id="odd" class="number">7</div>
-			<div id="even" class="number">10</div>
-			<div id="odd" class="number">13</div>
-			<div id="even" class="number">16</div>
-			<div id="odd" class="number">19</div>
-			<div id="even" class="number">22</div>
-			<div id="odd" class="number">25</div>
-			<div id="even" class="number">28</div>
-			<div id="odd" class="number">31</div>
-			<div id="even" class="number">34</div>
+			<div id="number" class="odd">1</div>
+			<div id="number" class="even">4</div>
+			<div id="number" class="odd">7</div>
+			<div id="number" class="even">10</div>
+			<div id="number" class="odd">13</div>
+			<div id="number" class="even">16</div>
+			<div id="number" class="odd">19</div>
+			<div id="number" class="even">22</div>
+			<div id="number" class="odd">25</div>
+			<div id="number" class="even">28</div>
+			<div id="number" class="odd">31</div>
+			<div id="number" class="even">34</div>
 		</div>			
 	</div>	
 
-</br>
+<!-- </br>
   		<div class="chips">
     		<div id="chip-1" class="chip-value">1</div>
     		<div id="chip-5" class="chip-value">5</div>
@@ -80,7 +100,7 @@
     		<div id="chip-25" class="chip-value">25</div>
     		<div id="chip-100" class="chip-value">100</div>
     	</div>
-    </div>	
+    </div>	 -->
 
 <script src='scripts/roulette.js'></script>
 <script src='scripts/main.js'></script>
