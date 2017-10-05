@@ -4,6 +4,11 @@ console.log('main');
 
 window.onload = function() {
     Gifffer();
+    backgroundSound();
+}
+function  backgroundSound() {
+          var sound = document.getElementById("background");
+          sound.play()
 }
 function chipSound() {
           var sound = document.getElementById("audio");
@@ -32,8 +37,12 @@ const getRandomInt = (min, max) => {
 }
 ////to generate the winning number
 $( "#generate-number" ).click(function() {
-	$('#MAGICAL-NUMBER').text(getRandomInt(0, 36))
-	theWin = winningNumber();
+
+
+  setTimeout(function(){
+  $('#MAGICAL-NUMBER').text(getRandomInt(0, 36))
+  theWin = winningNumber();
+   },8000);
   spinSound();
 });
 
