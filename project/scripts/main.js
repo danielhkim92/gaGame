@@ -5,8 +5,20 @@ console.log('main');
 window.onload = function() {
     Gifffer();
 }
-function PlaySound() {
+function chipSound() {
           var sound = document.getElementById("audio");
+          sound.play()
+}
+function spinSound() {
+          var sound = document.getElementById("roulette-spin");
+          sound.play()
+}
+function clearBetSound() {
+          var sound = document.getElementById("clear-bet");
+          sound.play()
+}
+function winSound() {
+          var sound = document.getElementById("win-sound");
           sound.play()
 }
 
@@ -22,8 +34,7 @@ const getRandomInt = (min, max) => {
 $( "#generate-number" ).click(function() {
 	$('#MAGICAL-NUMBER').text(getRandomInt(0, 36))
 	theWin = winningNumber();
-
-
+  spinSound();
 });
 
 /////to get the winning number
@@ -125,10 +136,12 @@ $('#spin-time').click(function (e) {
   countInArray(betNumbers, theWin)
   clearNumbers();
   returnBorder();
+  winSound();
 });
 
 
 $('#clear-bets').click(function (e) {
+  clearBetSound();
   clearNumbers();
   $('#report').text(betNumbers);
   returnBorder();
@@ -150,7 +163,7 @@ $('h5').text("Balance: " + dan.balance)
 ///kinda lets people know whats clicked
 $(".odd, .even, .zero").click(function (e) {
   $(this).css('border', '2px dashed white');
-  PlaySound();
+  chipSound();
 })
 
 
