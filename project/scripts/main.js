@@ -5,8 +5,10 @@ console.log('main');
 window.onload = function() {
     Gifffer();
 }
-
-
+function PlaySound() {
+          var sound = document.getElementById("audio");
+          sound.play()
+}
 
 let theWin;
 let amountOfTimes
@@ -38,14 +40,48 @@ $(".odd, .even, .zero").click(function( e ) {
 	betNumbers.push(parseInt($(e.currentTarget).text()));
 	console.log(parseInt($(e.currentTarget).text()));
 	dan.balance --;
-	$('#balance').text("Balance: " + dan.balance)
-	$('#report').text(betNumbers)
+	   $('h5').text("Balance: " + dan.balance)  
 
+    if(dan.balance <= -1){
+         alert('you broke the game. you ran out of money. refresh the page.')
+    };
+
+  $('#report').text(betNumbers);
+  produceChips();
 });
+
+const produceChips = () => {
+  console.log('being called.')
+  const $img = $('<img />');
+  $img[0].src = 'https://www.pokerstore.nl/media/catalog/product/cache/5/image/650x/040ec09b1e35df139433887a97daa66f/d/o/dollar_poker_chips_4.png'
+  $img.addClass('chip-icons')
+
+  $('#balance').append($img)
+  if(betNumbers.length === 5){
+    $( ".chip-icons" ).remove();
+    $('#balance').append($("<img src='http://dfwpokerparties.com/img/5DollarChip.png'>").addClass('chip-icons'))}
+  if(betNumbers.length === 10){
+    $( ".chip-icons" ).remove();
+    $('#balance').append($("<img src='https://www.pokerstore.nl/media/catalog/product/cache/5/small_image/295x295/9df78eab33525d08d6e5fb8d27136e95/t/o/toernooi_chips_poker_10.png'>").addClass('chip-icons'))}
+  if(betNumbers.length === 15){
+    $( ".chip-icons" ).remove();
+    $('#balance').append($("<img src='https://www.pokerstore.nl/media/catalog/product/cache/5/small_image/295x295/9df78eab33525d08d6e5fb8d27136e95/t/o/toernooi_chips_poker_10.png'>").addClass('chip-icons'))
+    $('#balance').append($("<img src='http://dfwpokerparties.com/img/5DollarChip.png'>").addClass('chip-icons'))}
+
+    if(betNumbers.length === 20){
+
+    $( ".chip-icons" ).remove();
+    $('#balance').append($("<img src='https://www.pokerstore.nl/media/catalog/product/cache/5/small_image/295x295/9df78eab33525d08d6e5fb8d27136e95/t/o/toernooi_chips_poker_10.png'>").addClass('chip-icons'))
+    $('#balance').append($("<img src='https://www.pokerstore.nl/media/catalog/product/cache/5/small_image/295x295/9df78eab33525d08d6e5fb8d27136e95/t/o/toernooi_chips_poker_10.png'>").addClass('chip-icons'))}
+             if(betNumbers.length === 25){
+    $( ".chip-icons" ).remove();
+    $('#balance').append($("<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/%2425_chip.svg/1000px-%2425_chip.svg.png'>").addClass('chip-icons'))}
+}
 
 
 /////this empties out the betNumbers array
 const clearNumbers = () => {
+  $( ".chip-icons" ).remove();
 	betNumbers.length = 0
 
 }
@@ -57,13 +93,14 @@ const checkWinnings = () => {
 			console.log(betNumbers[i] + " is a winning number")
 			dan.balance += 36;
 			amountOfTimes = countInArray(betNumbers, theWin)
-			$('#balance').text("Balance: " + dan.balance)
+			$('h5').text("Balance: " + dan.balance)
 			$('#report').text("You won" + (35 * amountOfTimes))
 		}
 		else{
 			console.log("sorry you didnt pick the winning number")
 		}
 	}
+  $( ".chip-icons" ).remove();
 }
 
 
@@ -108,26 +145,12 @@ class Player {
 
 const dan = new Player
 
-$('#balance').text("Balance: " + dan.balance)
-
-////math
-// 35:1 when the chip is on the actual number
-// winnings = amountOfChips * 35 + amountOfChips
-
-// 17:1 when the chip is on a half bet
-// winnings = amountOfChips * 17 + amountOfChips
-
-// 8:1 when the chip is on a corner bet
-// winning = amountOfChips * 8 + amountOfChips
-
-// 2:1 when the chip is on the row bet
-// winning = amountOfChips * 3 + amountOfChips
-
-
+$('h5').text("Balance: " + dan.balance)
 
 ///kinda lets people know whats clicked
 $(".odd, .even, .zero").click(function (e) {
   $(this).css('border', '2px dashed white');
+  PlaySound();
 })
 
 
@@ -171,25 +194,25 @@ const returnBorder = () => {
 
 ////drag chips
 
-$('#chip-1, #chip-5, #chip-10, #chip-25, #chip-100').mousedown(function(){
-   original = true;
-});
+// $('#chip-1, #chip-5, #chip-10, #chip-25, #chip-100').mousedown(function(){
+//    original = true;
+// });
 
-$('#chip-1, #chip-5, #chip-10, #chip-25, #chip-100').draggable({
-    helper : "clone",
-});
+// $('#chip-1, #chip-5, #chip-10, #chip-25, #chip-100').draggable({
+//     helper : "clone",
+// });
 
-$( ".number" ).droppable({
-    drop: function( event, ui ) {
-        if(original){
-             ui.helper.removeClass('ui-draggable-dragging');
-             var newDiv = $(ui.helper).clone().removeClass('ui-draggable-dragging');
-             newDiv.draggable();
-             $(this).append(newDiv);
-             original = false;
-        }
-      }  
-});
+// $( ".number" ).droppable({
+//     drop: function( event, ui ) {
+//         if(original){
+//              ui.helper.removeClass('ui-draggable-dragging');
+//              var newDiv = $(ui.helper).clone().removeClass('ui-draggable-dragging');
+//              newDiv.draggable();
+//              $(this).append(newDiv);
+//              original = false;
+//         }
+//       }  
+// });
 
 
 

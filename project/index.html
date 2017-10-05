@@ -9,9 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
 <body>
-	<div id="balance"></div>
-			<!-- <img src="https://us.123rf.com/450wm/mihmihmal/mihmihmal1705/mihmihmal170500040/78620930-vector-logo-for-roulette-gamble-wheel-of-european-roulette-heap-of-playing-chip-for-betting-letterin.jpg?ver=6"> -->
-		<div class="title-game"></div>
+	<div class="title-game"></div>
 	<div class='roulette-buttons'>
 		<button id="clear-bets">CLEAR BETS</button>
 		<button id="spin-time">Check Winnings</button>
@@ -19,19 +17,22 @@
 	</div>
 	<div class='roulette-game'>	
 		<div id="report"></div>
-		<!-- this is where the number pops out for now 10.3.17 -->
-		<div id="MAGICAL-NUMBER"></div>
 		<div id="instructions">
 			<h3>Instructions</h3>
 				<p>Your initial balance is 25.  Place your bets by clicking on the boxes below.  Each click is a one dollar bet.  If you wish to clear your bets and start over, click on the "CLEAR BETS" button and you can place your bets all over again.</p>
 				<p>When you are ready to start the spin, click on the "Generate Number" button.  You will then see the winning number in the black box.  This will produce the the winning number.</p>
 				<p>To see if you won, you will then press the "Check Winnings" button.  You can now check your balance and see how much you have won.</p>
 		</div>
+				<!-- this is where the number pops out for now 10.3.17 -->
+		<div id="MAGICAL-NUMBER"></div>
 		<div id="roulette-person">
 			<div class='gif'>
 				<img data-gifffer="http://img15.laughinggif.com/pic/HTTP3N0cmVhbTEuZ2lmc291cC5jb20vdmlldzE	vMjAxNjAzMjQvNTMwMjczOS9yb3VsZXR0ZS13aGVlbC1vLmdpZgloglog.gif">
 			</div>
 		</div>
+	</div>
+	<div id="balance">
+		<h5>BALANCE YO</h5>
 	</div>
 <!-- 	this is where the table is created with divs -->
 	<div id="roulette-table">
@@ -80,15 +81,12 @@
 		</div>			
 	</div>	
 
-<!-- </br>
-  		<div class="chips">
-    		<div id="chip-1" class="chip-value">1</div>
-    		<div id="chip-5" class="chip-value">5</div>
-    		<div id="chip-10" class="chip-value">10</div>
-    		<div id="chip-25" class="chip-value">25</div>
-    		<div id="chip-100" class="chip-value">100</div>
-    	</div>
-    </div>	 -->
+<audio id="audio" src="chip-sound.mp3" autostart="false" preload="auto" ></audio>
+
+
+
+
+
 <script type="text/javascript" src="gifffer.min.js"></script>
 <script src='scripts/main.js'></script>
 </body>
