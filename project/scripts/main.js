@@ -134,9 +134,9 @@ const countInArray = (betNumbers, theWin) => {
     }
     return count
 };
-
-
-
+const returnBalance = () => {
+  $('h5').text("Balance: " + (dan.balance + betNumbers.length))
+}
 
 
 
@@ -150,6 +150,7 @@ $('#spin-time').click(function (e) {
 
 
 $('#clear-bets').click(function (e) {
+  returnBalance();
   clearBetSound();
   clearNumbers();
   $('#report').text(betNumbers);
