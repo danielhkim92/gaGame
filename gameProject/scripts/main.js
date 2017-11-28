@@ -36,15 +36,51 @@ const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 ////to generate the winning number
+// $( "#generate-number" ).click(function() {
+
+// setTimeout(function(){
+//   $('#MAGICAL-NUMBER').text(getRandomInt(0, 36))
+//   theWin = winningNumber();
+//   console.log(theWin)
+//    },8000);
+
+
+//   spinSound();
+// });
+// var interval1Id = setInterval(function(){
+//     $('#MAGICAL-NUMBER').text(getRandomInt(0, 36));
+// },100);
 $( "#generate-number" ).click(function() {
-
-
-  setTimeout(function(){
-  $('#MAGICAL-NUMBER').text(getRandomInt(0, 36))
-  theWin = winningNumber();
-   },8000);
-  spinSound();
+    var intervalID = setInterval(function() {
+          $('#MAGICAL-NUMBER').text(getRandomInt(0, 36))
+    }, 100);
+    setTimeout(function() {
+        clearInterval(intervalID);
+            theWin = winningNumber();
+    console.log(theWin)
+    }, 8000);
+    theWin = winningNumber();
+    console.log(theWin)
+    spinSound();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /////to get the winning number
 const winningNumber = () => {
